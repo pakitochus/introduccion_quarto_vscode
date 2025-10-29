@@ -1,0 +1,52 @@
+---
+title: "Documento con Formato Avanzado"
+format: html
+---
+
+# Figuras y Tablas Referenciables
+
+Quarto nos permite añadir títulos a imágenes y referenciarlas automáticamente.
+
+## Imagen con Título
+
+Para que la referencia cruzada funcione, necesitamos darle una *etiqueta* (`#fig-ejemplo`).
+
+![Logotipo de Quarto, el motor de publicación científica.](https://quarto.org/images/quarto-logo-small.png){#fig-ejemplo width=200px}
+
+Como podemos observar, la Figura @fig-ejemplo muestra el icono oficial de Quarto, que se ve muy bien en nuestra publicación.
+
+## Ecuaciones con LaTeX
+
+Podemos incluir ecuaciones matemáticas usando sintaxis de LaTeX:
+
+$$
+\text{Fuerza} = \text{Masa} \times \text{Aceleración} \quad (F = ma)
+$$
+
+## Tablas Sencillas
+
+Aquí hay una tabla simple de Markdown:
+
+| Característica | Quarto | Markdown Básico |
+|:---------------|:------:|:----------------|
+| Citas BibTeX   | Sí     | No              |
+| Figuras con ID | Sí     | No              |
+| VS Code        | Sí     | Sí              |
+
+
+## Tablas "gridtables"
+
+Aquí hay una tabla avanzada (con rowspans y colspans) de Markdown:
+
++---------------------+:---------------------:+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | N/A   | 19.8  |
++---------------------+-------+-------+-------+
+| Earth               | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
+
+: Tabla con rowspan (*gridtable*) {#tbl-ejemplo2}

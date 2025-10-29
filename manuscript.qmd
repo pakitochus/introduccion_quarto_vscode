@@ -1,0 +1,34 @@
+---
+title: "Guía para la Publicación reproducible con Quarto"
+author: "Tu Nombre"
+date: "Octubre, 2025"
+format:
+  html:
+    toc: true
+    code-fold: true
+    theme: cosmo
+bibliography: references.bib
+csl: https://www.zotero.org/styles/nature
+---
+
+# Introducción
+
+Quarto es una herramienta moderna para la publicación técnica y científica. Permite a los autores crear documentos reproducibles combinando texto narrativo y código ejecutable.
+
+## Citación en el texto
+
+El sistema BibTeX es fundamental para este proceso [@bibtex]. Quarto utiliza este estándar para generar listas de referencias automáticas.
+
+La principal ventaja de Quarto es su enfoque en la reproducibilidad, una mejora significativa sobre métodos anteriores. Por ejemplo, el equipo de desarrollo destaca que un único archivo fuente puede generar múltiples formatos de salida [@quarto2022].
+
+## Flujo de trabajo con Zotero (Explicación para la Charla)
+
+1.  **Instalar Zotero y Better BibTeX (BBT).**
+2.  **Configurar BBT** para exportar automáticamente la colección de tu proyecto a un archivo `references.bib` que esté *en la misma carpeta* que tu documento Quarto.
+3.  **Citar en VS Code:** Zotero genera una "clave" única (ej. `quarto2022`). Solo tienes que escribir `[@clave]` en tu archivo `.qmd`.
+
+Quarto se encargará de hacer todo lo demás.
+
+## Referencias
+
+El listado de referencias (Bibliografía) se generará automáticamente aquí basándose en las citas que has hecho en el texto y el archivo `references.bib`.

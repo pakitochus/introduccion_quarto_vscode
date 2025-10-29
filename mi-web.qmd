@@ -1,0 +1,21 @@
+---
+title: "Mi Primera Página Web con Quarto"
+author: "Tu Nombre"
+format: html
+---
+
+# ¡Hola, Quarto y VS Code!
+
+Este es el documento más sencillo de Quarto. Usa la sintaxis de Markdown para crear contenido.
+
+## Markdown Básico
+
+* **Negrita:** Esto es texto en **negrita**.
+* **Cursiva:** Esto es texto en *cursiva*.
+* **Listas:**
+    1.  Primer punto.
+    2.  Segundo punto.
+
+Puedes ver la magia de Quarto al **Renderizar** este archivo. Simplemente haz clic en el botón "Render" en VS Code o ejecuta en la terminal: `quarto render mi-web.qmd`.
+
+
