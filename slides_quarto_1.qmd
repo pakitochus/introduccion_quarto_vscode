@@ -1,0 +1,172 @@
+---
+title: "Introducción a {{< quarto >}} Quarto Markdown con {{< iconify devicon:vscode >}} VS Code"
+subtitle: "Publicación Científica y Técnica Simplificada"
+author: "F. J. Martínez-Murcia [{{< iconify fa6-solid:envelope >}}](mailto:fjesusmartinez@ugr.es)"
+date: "Octubre 2025"
+format:
+  coeos-revealjs:
+    output-file: index
+    fontsize: 24pt
+editor: visual
+---
+
+# Quarto: El Futuro de la Publicación
+
+## 1. Instalación del Software Necesario 
+
+| Componente | | Descripción | Instalación |
+|:-----------|-|:-----------|:------------|
+| {{< quarto >}} **Quarto CLI** | [{{< iconify fa6-solid:download >}}](https://quarto.org/docs/get-started) | El motor principal (línea de comandos). | Descarga y ejecuta el instalador oficial.  |
+| {{< iconify devicon:vscode >}} **VS Code** | [{{< iconify fa6-solid:download >}}](https://code.visualstudio.com/download) | El entorno de desarrollo (IDE). | Descarga gratuita.  |
+| **Extensión de Quarto** | {{< iconify fa6-solid:download >}} | Ofrece resaltado de sintaxis y previsualización. | Instalar desde el Marketplace de VS Code. [{{< iconify fa6-solid:download >}}](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) |
+| **Intérpretes** | {{< iconify fa6-solid:download >}} | (Opcional) Python o R para código dinámico. | Tener entornos configurados. |
+
+
+---
+
+## 2. ¿Qué es {{< iconify material-symbols:markdown >}} Markdown?
+
+### El Lenguaje de Marcado Ligero 
+
+* **Definición:** Sintaxis de texto plano fácil de leer y escribir (no como {{< iconify file-icons:latex >}}).
+* **Objetivo:** Convertirse a formatos complejos (HTML, PDF, etc.). [Markdown Live](https://markdownlivepreview.com)
+
+
+| Sintaxis             | Descripción               | Ejemplo                       |
+|----------------------|---------------------------|-------------------------------|
+| `# Título`           | Encabezados               | # Mi título                   |
+| `**Negrita**`, `*Cursiva*`, `~~Tachado~~`, `superscript^2^`        | Formateo                   | **negrita**, *cursiva*, ~~tachado~~, x^2^              |
+| `- Lista` o <br> `1. Lista numerada`  | Listas            | - elemento                 |
+| `[Enlace](URL)`      | Hipervínculo              | [Quarto](https://quarto.org)|
+| ``código ``          | Código           | `print("Hola")`         |
+
+: {.smaller}
+
+---
+
+## 3. El Ecosistema de Quarto
+
+### Markdown Dinámico y Múltiples Formatos
+
+1.  **Motor Pandoc:** Quarto utiliza Pandoc para realizar la conversión.
+2.  **Un Archivo Fuente (`.qmd`):** Escribes una vez, publicas en múltiples formatos.
+    * HTML, PDF, MS Word.
+    * **Presentaciones (¡Como esta!)**, Sitios Web, Libros.
+3.  **Computación Reproducible:** Soporte nativo para *code chunks* (fragmentos de código).
+
+```python
+#| label: python-chunk
+#| echo: true
+#| output: false
+
+print("¡Quarto puede ejecutar código!")
+# Se requiere un intérprete de Python
+```
+
+---
+
+# 💻 Manos a la Obra: Prácticas
+
+## 4\. Práctica 1: Mi Primera Web
+
+::: columns
+::: {.column width="50%"}
+**El Archivo `mi-web.qmd`**
+
+```markdown
+---
+title: "Mi Primera Web Quarto"
+format: html
+---
+
+# Hola, Mundo Quarto
+
+Este es el contenido más simple.
+¡Solo renderiza!
+```
+
+:::
+
+::: {.column width="50%"}
+**Pasos en VS Code**
+
+1.  Crear y guardar como `.qmd`.
+2.  Añadir el **YAML Front Matter** (metadatos iniciales).
+3.  Hacer clic en **Renderizar** (o `quarto render nombre.qmd`).
+4.  Observar la **Previsualización en vivo** en el Visual Editor.
+    :::
+    :::
+
+---
+
+## 5\. Práctica 2: Imágenes y Formato Avanzado
+
+### Referencias Cruzadas y Ecuaciones
+
+  * **Imágenes con Cita:** Usamos una etiqueta para la figura (`#fig-logo`).
+
+<!-- end list -->
+
+```markdown
+![Logo de Quarto.](url/logo.png){#fig-logo width=150px}
+
+Ver la Figura @fig-logo.
+```
+
+  * **Ecuaciones LaTeX:** El estándar científico.
+
+$$
+\text{Ecuación de Einstein:} \quad E = mc^2
+$$::: footer
+Quarto convierte el LaTeX de las ecuaciones a formato web (MathJax) o PDF.
+:::
+
+---
+
+## 6\. Práctica 3: Artículo Científico (Citas)
+
+### La Magia de BibTeX y Zotero
+
+1.  **El Archivo de Referencias:** Necesitamos un archivo `references.bib` (o CSL-JSON) con las claves de las citas.
+2.  **Configuración en YAML:**
+
+<!-- end list -->
+
+```yaml
+---
+# ... otros metadatos
+bibliography: references.bib
+csl: nature.csl # Estilo de citación
+---
+```
+---
+
+### Citar en el Texto
+
+* Cita entre paréntesis: `Un hecho importante [@quarto2022].`
+* Cita narrativa: `Según @bibtex, el programa BibTeX es clave.`
+
+::: footer
+**Vínculo con Zotero:** Usa **Better BibTeX (BBT)** para mantener tu `.bib` sincronizado y actualizado.
+:::
+
+---
+
+# 🎓 Conclusión y Próximo Paso
+
+## Quarto + VS Code: Una Combinación Potente
+
+* **Facilidad:** Escribir en Markdown, simple y enfocado.
+* **Poder:** Publicar en cualquier formato, con reproducibilidad.
+* **Integración:** VS Code hace que el flujo de trabajo sea fluido e intuitivo.
+
+---
+
+## ¿Preguntas?
+
+¡Gracias por su atención\!
+
+::: footer
+**Próximo Paso:** ¿Les gustaría que compartiera el **enlace a un proyecto de GitHub** que contenga todos estos archivos (presentación, `.qmd`s de práctica y `.bib`) para que puedan clonarlo y empezar de inmediato?
+:::
+
