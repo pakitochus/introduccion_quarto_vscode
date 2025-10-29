@@ -7,54 +7,88 @@ format:
   coeos-revealjs:
     output-file: index
     fontsize: 24pt
+    embed-resources: true
 editor: visual
+code-annotations: select
+bibliography: references.bib
+css: styles.css
 ---
 
-# Quarto: El Futuro de la Publicación
+# {{< quarto >}} Quarto: un framework para la publicación científica y técnica
 
-## 1. Instalación del Software Necesario 
+## 1. Instalación del Software Necesario
 
-| Componente | | Descripción | Instalación |
-|:-----------|-|:-----------|:------------|
-| {{< quarto >}} **Quarto CLI** | [{{< iconify fa6-solid:download >}}](https://quarto.org/docs/get-started) | El motor principal (línea de comandos). | Descarga y ejecuta el instalador oficial.  |
-| {{< iconify devicon:vscode >}} **VS Code** | [{{< iconify fa6-solid:download >}}](https://code.visualstudio.com/download) | El entorno de desarrollo (IDE). | Descarga gratuita.  |
-| **Extensión de Quarto** | {{< iconify fa6-solid:download >}} | Ofrece resaltado de sintaxis y previsualización. | Instalar desde el Marketplace de VS Code. [{{< iconify fa6-solid:download >}}](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) |
-| **Intérpretes** | {{< iconify fa6-solid:download >}} | (Opcional) Python o R para código dinámico. | Tener entornos configurados. |
+| Componente |   | Descripción | Instalación |
+|:------------------|--------------|:------------------|:--------------------|
+| {{< quarto >}} **Quarto CLI** | [{{< iconify line-md:download-loop >}}](https://quarto.org/docs/get-started) | El motor principal (línea de comandos). | Descarga y ejecuta el instalador oficial. |
+| {{< iconify devicon:vscode >}} **VS Code** | [{{< iconify line-md:download-loop >}}](https://code.visualstudio.com/download) | El entorno de desarrollo (IDE). | Descarga gratuita. |
+| **Extensión de Quarto** | {{< iconify line-md:download-loop >}} | Ofrece resaltado de sintaxis y previsualización. | Instalar desde el Marketplace de VS Code. |
+| **Intérpretes** | {{< iconify line-md:download-loop >}} | (Opcional) Python o R para código dinámico. | Tener entornos configurados. |
 
-
----
+------------------------------------------------------------------------
 
 ## 2. ¿Qué es {{< iconify material-symbols:markdown >}} Markdown?
 
-### El Lenguaje de Marcado Ligero 
+### El Lenguaje de Marcado Ligero
 
-* **Definición:** Sintaxis de texto plano fácil de leer y escribir (no como {{< iconify file-icons:latex >}}).
-* **Objetivo:** Convertirse a formatos complejos (HTML, PDF, etc.). [Markdown Live](https://markdownlivepreview.com)
+-   **Definición:** Sintaxis de texto plano fácil de leer y escribir (no como {{< iconify file-icons:latex >}}).
+-   **Objetivo:** Convertirse a formatos complejos (HTML, PDF, etc.).
 
-
-| Sintaxis             | Descripción               | Ejemplo                       |
-|----------------------|---------------------------|-------------------------------|
-| `# Título`           | Encabezados               | # Mi título                   |
-| `**Negrita**`, `*Cursiva*`, `~~Tachado~~`, `superscript^2^`        | Formateo                   | **negrita**, *cursiva*, ~~tachado~~, x^2^              |
-| `- Lista` o <br> `1. Lista numerada`  | Listas            | - elemento                 |
-| `[Enlace](URL)`      | Hipervínculo              | [Quarto](https://quarto.org)|
-| ``código ``          | Código           | `print("Hola")`         |
+| Sintaxis | Descripción | Ejemplo |
+|--------------------|------------------------|----------------------------|
+| `# Título` | Encabezados | \# Mi título |
+| `**Negrita**`, `*Cursiva*`, `~~Tachado~~`, `superscript^2^` | Formateo | **negrita**, *cursiva*, ~~tachado~~, x^2^ |
+| `- Lista` o <br> `1. Lista numerada` | Listas | \- elemento |
+| `[Enlace](URL)` | Hipervínculo | [Quarto](https://quarto.org) |
+| `código` | Código | `print("Hola")` |
+| `$M_a^{th} \Sigma_{q}(u) at \text{i} \emptyset \eta$` | Ecuaciones | $M_a^{th} \Sigma_{q}(u) at \text{i} \emptyset \eta$ |
 
 : {.smaller}
 
----
+------------------------------------------------------------------------
 
-## 3. El Ecosistema de Quarto
+Ejemplo de un archivo Markdown:
 
-### Markdown Dinámico y Múltiples Formatos
+``` {.markdown filename="mi-web.md" code-line-numbers="|1-4|8-9|10-12|16"}
 
-1.  **Motor Pandoc:** Quarto utiliza Pandoc para realizar la conversión.
-2.  **Un Archivo Fuente (`.qmd`):** Escribes una vez, publicas en múltiples formatos.
-    * HTML, PDF, MS Word.
-    * **Presentaciones (¡Como esta!)**, Sitios Web, Libros.
-3.  **Computación Reproducible:** Soporte nativo para *code chunks* (fragmentos de código).
+# ¡Hola, Quarto y VS Code! <!-- <1> -->
 
-```python
+Este es el documento más sencillo de Quarto. Usa la sintaxis de Markdown para crear contenido. 
+
+## Markdown Básico <!-- <1> -->
+
+* **Negrita:** Esto es texto en **negrita**. <!-- <2> -->
+* **Cursiva:** Esto es texto en ~~negrita~~ *cursiva*.  <!-- <2> -->
+* **Listas:** (anidadas) <!-- <3> -->
+    1.  Primer punto. <!-- <3> -->
+    2.  Segundo punto. <!-- <3> -->
+
+Puedes ver la magia de Quarto al **Renderizar** este archivo. Simplemente haz clic en el botón "Render" en VS Code o ejecuta en la terminal: `quarto render mi-web.qmd`.
+
+![Mando a distancia.](https://www.svgrepo.com/show/494068/remote-control.svg) <!-- <4> -->
+```
+
+1.  Títulos de secciones
+2.  Formato de texto
+3.  Listas
+4.  Imágenes
+
+A editar en vivo: [Markdown Live {{< iconify line-md:external-link >}}](https://markdownlivepreview.com)
+
+------------------------------------------------------------------------
+
+## 3. El Ecosistema de {{< quarto >}} Quarto
+
+### Markdown Expandido
+
+1.  **Pandoc:** Quarto utiliza Pandoc para realizar la conversión.
+2.  **Un Archivo Fuente (`.qmd`, `.ipynb`):** Escribes una vez, publicas en múltiples formatos.
+    -   HTML, PDF, MS Word, Powerpoint, etc.
+    -   Proyectos grandes (libros, artículos, sitios web, [ver galería](https://quarto.org/docs/gallery))
+3.  **Computación Reproducible:** Soporte nativo para *code chunks*:
+    -   Python (Jupyter {{< iconify material-icon-theme:jupyter >}}), R (RMarkdown {{< iconify mdi:language-r >}}).
+
+``` python
 #| label: python-chunk
 #| echo: true
 #| output: false
@@ -63,67 +97,163 @@ print("¡Quarto puede ejecutar código!")
 # Se requiere un intérprete de Python
 ```
 
+------------------------------------------------------------------------
+
+### El preámbulo del documento
+
+El preámbulo es el encabezado del documento que contiene los metadatos.
+
+``` {.yaml filename="documento.qmd" code-line-numbers="|2|3|4"}
 ---
-
-# 💻 Manos a la Obra: Prácticas
-
-## 4\. Práctica 1: Mi Primera Web
-
-::: columns
-::: {.column width="50%"}
-**El Archivo `mi-web.qmd`**
-
-```markdown
----
-title: "Mi Primera Web Quarto"
+title: "Mi Primer Documento Quarto"
+author: "Tu Nombre"
 format: html
 ---
-
-# Hola, Mundo Quarto
-
-Este es el contenido más simple.
-¡Solo renderiza!
 ```
 
+Otros campos:
+
+``` {.yaml code-line-numbers="|1|2-7|8|9"}
+date: Fecha de creación del documento # puede ser auto
+author:
+  - name: Soraya Drake
+    affiliation: 
+        name: Everpine University    
+        url: http://everpine.edu
+  - name: Otro nombre
+toc: true # toc-depth: 2
+bibliography: references.bib
+```
+
+::: {.callout-tip .aside}
+## Trucos
+
+Se puede incluir este preámbulo en un documento `.ipynb` y podríamos continuar de la misma forma.
+:::
+
+------------------------------------------------------------------------
+
+### Sintaxis expandida
+
+#### Figuras y tablas referenciables
+
+::::: {.fragment fragment-index="1"}
+::: {.column width="50%"}
+-   Podemos referenciar figuras en el texto, como @fig-adeli
 :::
 
 ::: {.column width="50%"}
+![Multiple ganador de premios.](adeli.webp){#fig-adeli width="150px"}
+:::
+:::::
+
+::::: {.fragment fragment-index="2"}
+::: {.column width="50%"}
+-   O tablas como @tbl-ejemplo2.
+:::
+
+::: {.column width="50%"}
+| Característica | Quarto | Markdown Básico |
+|:---------------|:------:|:----------------|
+| Citas BibTeX   |   Sí   | No              |
+| Figuras con ID |   Sí   | No              |
+| VS Code        |   Sí   | Sí              |
+
+: Tabla citable {#tbl-ejemplo2 .smaller}
+:::
+:::::
+
+---
+
+Usar tablas avanzadas como @tbl-ejemplo2.
+
++---------------------+-----------------------+
+| Location            | Temperature 1961-1990 |
+|                     | in degree Celsius     |
+|                     +-------+-------+-------+
+|                     | min   | mean  | max   |
++=====================+=======+=======+=======+
+| Antarctica          | -89.2 | N/A   | 19.8  |
++---------------------+-------+-------+-------+
+| Earth               | -89.2 | 14    | 56.7  |
++---------------------+-------+-------+-------+
+
+: Tabla con rowspan (*gridtable*) {#tbl-ejemplo2}
+
+::: {.fragment .column width="50%" fragment-index="1"}
+Incrustar vídeos de youtube :
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+``` {shortcodes="false"}
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+```
+:::
+
+:::: {.fragment .column width="50%" fragment-index="2"}
+O incluso citar artículos de bibtex como @space2004 con el código `@space2004`.
+
+::: {#refs}
+:::
+::::
+
+# 💻 Manos a la Obra: Prácticas
+
+Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitochus/introduccion_quarto_vscode)
+
+------------------------------------------------------------------------
+
+## 4. Práctica 1: Mi Primer documento
+
+::::: columns
+::: {.column width="60%"}
+**El Archivo `mi-web.qmd`**
+
+``` {.markdown filename="mi-web.qmd" code-line-numbers="|1-5|7-11|13-14|16-17|23"}
+{{< include mi-web.qmd >}}
+```
+:::
+
+::: {.column width="40%"}
 **Pasos en VS Code**
 
 1.  Crear y guardar como `.qmd`.
 2.  Añadir el **YAML Front Matter** (metadatos iniciales).
 3.  Hacer clic en **Renderizar** (o `quarto render nombre.qmd`).
 4.  Observar la **Previsualización en vivo** en el Visual Editor.
-    :::
-    :::
+5.  Modificar el documento. Buscar una imagen en la web y añadirla.
+:::
+:::::
 
----
+------------------------------------------------------------------------
 
-## 5\. Práctica 2: Imágenes y Formato Avanzado
+## 5. Práctica 2: Imágenes y Formato Avanzado
 
 ### Referencias Cruzadas y Ecuaciones
 
-  * **Imágenes con Cita:** Usamos una etiqueta para la figura (`#fig-logo`).
+-   **Imágenes con Cita:** Usamos una etiqueta para la figura (`#fig-logo`).
 
-<!-- end list -->
-
-```markdown
+``` markdown
 ![Logo de Quarto.](url/logo.png){#fig-logo width=150px}
 
 Ver la Figura @fig-logo.
 ```
 
-  * **Ecuaciones LaTeX:** El estándar científico.
+-   **Ecuaciones LaTeX:** El estándar científico.
 
 $$
 \text{Ecuación de Einstein:} \quad E = mc^2
-$$::: footer
-Quarto convierte el LaTeX de las ecuaciones a formato web (MathJax) o PDF.
+$$ {#eq-black-scholes}
+
+Incluyendo que también son citables, con @eq-black-scholes.
+
+::: aside
+Quarto convierte el LaTeX de las ecuaciones a formato web (MathJax) o PDF. 
 :::
 
 ---
 
-## 6\. Práctica 3: Artículo Científico (Citas)
+## 6. Práctica 3: Artículo Científico (Citas)
 
 ### La Magia de BibTeX y Zotero
 
@@ -132,19 +262,19 @@ Quarto convierte el LaTeX de las ecuaciones a formato web (MathJax) o PDF.
 
 <!-- end list -->
 
-```yaml
+``` yaml
 ---
 # ... otros metadatos
 bibliography: references.bib
 csl: nature.csl # Estilo de citación
 ---
 ```
----
+
 
 ### Citar en el Texto
 
-* Cita entre paréntesis: `Un hecho importante [@quarto2022].`
-* Cita narrativa: `Según @bibtex, el programa BibTeX es clave.`
+-   Cita entre paréntesis: `Un hecho importante [@quarto2022].`
+-   Cita narrativa: `Según @bibtex, el programa BibTeX es clave.`
 
 ::: footer
 **Vínculo con Zotero:** Usa **Better BibTeX (BBT)** para mantener tu `.bib` sincronizado y actualizado.
@@ -152,21 +282,24 @@ csl: nature.csl # Estilo de citación
 
 ---
 
-# 🎓 Conclusión y Próximo Paso
+
+## 7. Práctica 4: Proyecto de GitHub
+
+``` {bash} 
+quarto create project --template github-pages --force
+```
+
+
+# 🎓 Conclusión y Próximos Pasos
 
 ## Quarto + VS Code: Una Combinación Potente
 
-* **Facilidad:** Escribir en Markdown, simple y enfocado.
-* **Poder:** Publicar en cualquier formato, con reproducibilidad.
-* **Integración:** VS Code hace que el flujo de trabajo sea fluido e intuitivo.
+-   **Facilidad:** Escribir en Markdown, simple y enfocado.
+-   **Poder:** Publicar en cualquier formato, con reproducibilidad.
+-   **Integración:** VS Code hace que el flujo de trabajo sea fluido e intuitivo.
 
 ---
 
 ## ¿Preguntas?
 
-¡Gracias por su atención\!
-
-::: footer
-**Próximo Paso:** ¿Les gustaría que compartiera el **enlace a un proyecto de GitHub** que contenga todos estos archivos (presentación, `.qmd`s de práctica y `.bib`) para que puedan clonarlo y empezar de inmediato?
-:::
-
+¡Gracias por su atención!
