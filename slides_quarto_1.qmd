@@ -1,9 +1,26 @@
 ---
 title: "Introducción a {{< quarto >}} Quarto Markdown con {{< iconify devicon:vscode >}} VS Code"
 subtitle: "Publicación Científica y Técnica Simplificada"
-author: "F. J. Martínez-Murcia [{{< iconify fa6-solid:envelope >}}](mailto:fjesusmartinez@ugr.es)"
+author: 
+  - name: F. J. Martínez-Murcia
+    email: fjesusmartinez@ugr.es
+    affiliation: Universidad de Granada
+    url: https://pakitochus.github.io
+    orcid: 0000-0001-8146-7056
 date: "Octubre 2025"
 format:
+  revealjs: 
+    theme: simple
+    fontsize: 24pt
+  html:
+    toc: true
+    code-fold: true
+    theme: cosmo
+    toc-depth: 2
+    code-line-numbers: true
+    code-tools: true
+    code-copy: true
+    code-highlight: true
   coeos-revealjs:
     output-file: index
     fontsize: 24pt
@@ -24,6 +41,7 @@ css: styles.css
 | {{< iconify devicon:vscode >}} **VS Code** | [{{< iconify line-md:download-loop >}}](https://code.visualstudio.com/download) | El entorno de desarrollo (IDE). | Descarga gratuita. |
 | **Extensión de Quarto** | {{< iconify line-md:download-loop >}} | Ofrece resaltado de sintaxis y previsualización. | Instalar desde el Marketplace de VS Code. |
 | **Intérpretes** | {{< iconify line-md:download-loop >}} | (Opcional) Python o R para código dinámico. | Tener entornos configurados. |
+: {.smaller}
 
 ------------------------------------------------------------------------
 
@@ -40,7 +58,7 @@ css: styles.css
 | `**Negrita**`, `*Cursiva*`, `~~Tachado~~`, `superscript^2^` | Formateo | **negrita**, *cursiva*, ~~tachado~~, x^2^ |
 | `- Lista` o <br> `1. Lista numerada` | Listas | \- elemento |
 | `[Enlace](URL)` | Hipervínculo | [Quarto](https://quarto.org) |
-| `código` | Código | `print("Hola")` |
+| `` `código` `` | Código | `print("Hola")` |
 | `$M_a^{th} \Sigma_{q}(u) at \text{i} \emptyset \eta$` | Ecuaciones | $M_a^{th} \Sigma_{q}(u) at \text{i} \emptyset \eta$ |
 
 : {.smaller}
