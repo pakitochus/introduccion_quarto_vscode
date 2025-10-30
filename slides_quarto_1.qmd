@@ -12,6 +12,11 @@ format:
   revealjs: 
     theme: simple
     fontsize: 24pt
+    embed-resources: true
+    parallax-background-image: background.jpg
+    parallax-background-size: "1920px 1080px"
+    parallax-background-horizontal: 50
+    parallax-background-vertical: 20
   html:
     toc: true
     code-fold: true
@@ -25,7 +30,6 @@ format:
     output-file: index
     fontsize: 24pt
     embed-resources: true
-editor: visual
 code-annotations: select
 bibliography: references.bib
 css: styles.css
@@ -33,7 +37,7 @@ css: styles.css
 
 # {{< quarto >}} Quarto: un framework para la publicación científica y técnica
 
-## 1. Instalación del Software Necesario
+# 1. Instalación del Software Necesario
 
 | Componente |   | Descripción | Instalación |
 |:------------------|--------------|:------------------|:--------------------|
@@ -43,11 +47,12 @@ css: styles.css
 | **Intérpretes** | {{< iconify line-md:download-loop >}} | (Opcional) Python o R para código dinámico. | Tener entornos configurados. |
 : {.smaller}
 
-------------------------------------------------------------------------
 
-## 2. ¿Qué es {{< iconify material-symbols:markdown >}} Markdown?
+# 2. ¿Qué es {{< iconify material-symbols:markdown >}} Markdown?
 
-### El Lenguaje de Marcado Ligero
+---
+
+## El Lenguaje de Marcado Ligero
 
 -   **Definición:** Sintaxis de texto plano fácil de leer y escribir (no como {{< iconify file-icons:latex >}}).
 -   **Objetivo:** Convertirse a formatos complejos (HTML, PDF, etc.).
@@ -93,11 +98,9 @@ Puedes ver la magia de Quarto al **Renderizar** este archivo. Simplemente haz cl
 
 A editar en vivo: [Markdown Live {{< iconify line-md:external-link >}}](https://markdownlivepreview.com)
 
-------------------------------------------------------------------------
+# 3. El Ecosistema de {{< quarto >}} Quarto
 
-## 3. El Ecosistema de {{< quarto >}} Quarto
-
-### Markdown Expandido
+## Markdown Expandido
 
 1.  **Pandoc:** Quarto utiliza Pandoc para realizar la conversión.
 2.  **Un Archivo Fuente (`.qmd`, `.ipynb`):** Escribes una vez, publicas en múltiples formatos.
@@ -117,7 +120,7 @@ print("¡Quarto puede ejecutar código!")
 
 ------------------------------------------------------------------------
 
-### El preámbulo del documento
+## El preámbulo del documento
 
 El preámbulo es el encabezado del documento que contiene los metadatos.
 
@@ -154,9 +157,9 @@ Se puede incluir este preámbulo en un documento `.ipynb` y podríamos continuar
 
 ------------------------------------------------------------------------
 
-### Sintaxis expandida
+## Sintaxis expandida
 
-#### Figuras y tablas referenciables
+### Figuras y tablas referenciables
 
 ::::: {.fragment fragment-index="1"}
 ::: {.column width="50%"}
@@ -223,20 +226,19 @@ O incluso citar artículos de bibtex como @space2004 con el código `@space2004`
 :::
 ::::
 
----
 
-## Editores en {{< iconify devicon:vscode >}} VS Code
+# Editores en {{< iconify devicon:vscode >}} VS Code
 
 - Editor de texto
 - Editor visual (WYSIWYG):
   - añade integración directa con {{< iconify academicons:zotero-square >}} Zotero
-  - Tablas y ecuaciones muy sencillas (excepto tablas avanzadas con *gridtables*). 
+  - Tablas y ecuaciones (excepto tablas avanzadas con *gridtables*). 
   - Me recuerda a LYX.
   - Más lento, especialmente con archivos grandes. 
 - Editor de notebook de jupyter : 
   - Integración completa de código y salida (cálculos, gráficos) con la narrativa.
   - Integración con asistentes de IA (Cursor, copilot etc) y depuración. 
-  - `ipynb` es un formato JSON, y por tanto, es más difícil de gestionar con git. 
+  - `ipynb` es un formato JSON, más difícil de gestionar con `git`. 
 
 
 # 💻 Manos a la Obra: Prácticas
@@ -330,15 +332,14 @@ csl: nature.csl # Estilo de citación
 **Vínculo con Zotero:** Usa **Better BibTeX (BBT)** para mantener tu `.bib` sincronizado y actualizado.
 :::
 
----
 
-## Conclusión y Próximos Pasos
+# Conclusión y Próximos Pasos
 
 - **Quarto + VS Code**: publicación **reproducible** y **multi-formato** (HTML, PDF, etc.).
 - Varios tipos de editores: visual, de notebook, de texto.
 - Soporte para la mayor parte de necesidades científicas y técnicas.
 
-### Trabajo futuro
+# Trabajo futuro
 - {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
   - Uso de **Git** embebido para gestionar cambios en los documentos: 
     - `commit`, `add`, `sync`, `push`, `pull` y gestión básica de ramas. 
