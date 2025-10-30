@@ -1,0 +1,6 @@
+
+## 7. Práctica 4: Proyecto de GitHub
+
+``` {bash} 
+quarto create project --template github-pages --force
+```
