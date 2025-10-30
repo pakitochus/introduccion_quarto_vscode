@@ -65,3 +65,42 @@ penguins |>                                      # <1>
 
 1. Take `penguins`, and then,
 2. add new columns for the bill ratio and bill area.
+
+## Subreferencias
+
+Tenemos referencias sobre la figura completa @fig-complex, y sobre cada una de las subfiguras @fig-adeli, @fig-scatterplot, @fig-diagram.
+
+:::: {#fig-complex layout="[[1, 1], [1]]"}
+
+::: {#fig-adeli}
+
+![](adeli.webp)
+
+An image file
+:::
+
+::: {#fig-scatterplot}
+
+```{r}
+#| echo: false
+plot(1:10)
+```
+
+A computational figure
+:::
+
+::: {#fig-diagram}
+
+```{dot}
+//| fig-height: 2
+digraph {
+  rankdir = "LR";
+  Transform -> Visualize
+}
+```
+
+A diagram
+:::
+
+Example figure combining different types of content
+::::

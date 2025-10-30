@@ -111,7 +111,7 @@ format: html
 ---
 ```
 
-Otros campos:
+Otros campos[^1]:
 
 ``` {.yaml code-line-numbers="|1|2-7|8|9"}
 date: Fecha de creación del documento # puede ser auto
@@ -122,14 +122,17 @@ author:
         url: http://everpine.edu
   - name: Otro nombre
 toc: true # toc-depth: 2
-bibliography: references.bib
 ```
 
-::: {.callout-tip .aside}
+::::: aside
+::: {.callout-tip}
 ## Trucos
 
 Se puede incluir este preámbulo en un documento `.ipynb` y podríamos continuar de la misma forma.
 :::
+
+[^1]: Más sobre [preámbulo {{< iconify line-md:external-link >}}](https://quarto.org/docs/authoring/front-matter.html)
+:::::
 
 ------------------------------------------------------------------------
 
@@ -139,7 +142,7 @@ Se puede incluir este preámbulo en un documento `.ipynb` y podríamos continuar
 
 ::::: {.fragment fragment-index="1"}
 ::: {.column width="50%"}
--   Podemos referenciar figuras en el texto, como @fig-adeli
+-   Podemos referenciar figuras[^3] en el texto, como @fig-adeli 
 :::
 
 ::: {.column width="50%"}
@@ -149,7 +152,7 @@ Se puede incluir este preámbulo en un documento `.ipynb` y podríamos continuar
 
 ::::: {.fragment fragment-index="2"}
 ::: {.column width="50%"}
--   O tablas como @tbl-ejemplo2.
+  -   O tablas[^4] como @tbl-ejemplo2.
 :::
 
 ::: {.column width="50%"}
@@ -162,6 +165,11 @@ Se puede incluir este preámbulo en un documento `.ipynb` y podríamos continuar
 : Tabla citable {#tbl-ejemplo2 .smaller}
 :::
 :::::
+
+::: {.fragment fragment-index="3" .aside}
+[^3]: Más sobre [figuras {{< iconify line-md:external-link >}}](https://quarto.org/docs/authoring/figures.html)
+[^4]: Más sobre [tablas {{< iconify line-md:external-link >}}](https://quarto.org/docs/authoring/tables.html)
+:::
 
 ---
 
@@ -197,6 +205,22 @@ O incluso citar artículos de bibtex como @space2004 con el código `@space2004`
 :::
 ::::
 
+---
+
+## Editores en {{< iconify devicon:vscode >}} VS Code
+
+- Editor de texto
+- Editor visual (WYSIWYG):
+  - añade integración directa con {{< iconify academicons:zotero-square >}} Zotero
+  - Tablas y ecuaciones muy sencillas (excepto tablas avanzadas con *gridtables*). 
+  - Me recuerda a LYX.
+  - Más lento, especialmente con archivos grandes. 
+- Editor de notebook de jupyter : 
+  - Integración completa de código y salida (cálculos, gráficos) con la narrativa.
+  - Integración con asistentes de IA (Cursor, copilot etc) y depuración. 
+  - `ipynb` es un formato JSON, y por tanto, es más difícil de gestionar con git. 
+
+
 # 💻 Manos a la Obra: Prácticas
 
 Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitochus/introduccion_quarto_vscode)
@@ -215,13 +239,18 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 :::
 
 ::: {.column width="40%"}
-**Pasos en VS Code**
+
+<br>
+
+::: {.callout-tip title="Pasos en VS Code"}
 
 1.  Crear y guardar como `.qmd`.
 2.  Añadir el **YAML Front Matter** (metadatos iniciales).
 3.  Hacer clic en **Renderizar** (o `quarto render nombre.qmd`).
 4.  Observar la **Previsualización en vivo** en el Visual Editor.
 5.  Modificar el documento. Buscar una imagen en la web y añadirla.
+
+:::
 :::
 :::::
 
@@ -239,42 +268,45 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 Ver la Figura @fig-logo.
 ```
 
--   **Ecuaciones LaTeX:** El estándar científico.
-
+-   **Ecuaciones LaTeX**, incluyendo que también son citables, con @eq-fourier.
+```latex
 $$
-\text{Ecuación de Einstein:} \quad E = mc^2
-$$ {#eq-black-scholes}
+\text{Transformada de Fourier:} \quad F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
+$$ {#eq-fourier}
+```
+$$
+\text{Transformada de Fourier:} \quad F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-i\omega t} dt
+$$ {#eq-fourier}
 
-Incluyendo que también son citables, con @eq-black-scholes.
 
-::: aside
-Quarto convierte el LaTeX de las ecuaciones a formato web (MathJax) o PDF. 
-:::
+-   **Subreferencias y patrones complejos**: bloques anidados (`:::`) que combinan salida de celdas, figuras, gráficos, etc.
 
 ---
 
-## 6. Práctica 3: Artículo Científico (Citas)
-
-### La Magia de BibTeX y Zotero
+## 6. Práctica 3: Artículo Científico <!-- (Front-matter y citas -->
 
 1.  **El Archivo de Referencias:** Necesitamos un archivo `references.bib` (o CSL-JSON) con las claves de las citas.
 2.  **Configuración en YAML:**
 
-<!-- end list -->
-
 ``` yaml
 ---
 # ... otros metadatos
+authors: 
+  - name: F. Martínez Soria
+    orcid: 0000-0000-0000-0000
+    affiliation: 
+      name: Universidad de la vida
+  - name: Fu Man-chu
+abstract: > 
+  The characteristic theme of the works of Stone is 
+  the bridge between culture and society. ...
 bibliography: references.bib
 csl: nature.csl # Estilo de citación
 ---
 ```
 
+3. **Citar** en el Texto: entre paréntesis: `Un hecho importante [@quarto2022]` o narrativa: `Según @bibtex, el programa BibTeX es clave`
 
-### Citar en el Texto
-
--   Cita entre paréntesis: `Un hecho importante [@quarto2022].`
--   Cita narrativa: `Según @bibtex, el programa BibTeX es clave.`
 
 ::: footer
 **Vínculo con Zotero:** Usa **Better BibTeX (BBT)** para mantener tu `.bib` sincronizado y actualizado.
@@ -282,24 +314,19 @@ csl: nature.csl # Estilo de citación
 
 ---
 
+## Conclusión y Próximos Pasos
 
-## 7. Práctica 4: Proyecto de GitHub
+- **Quarto + VS Code**: publicación **reproducible** y **multi-formato** (HTML, PDF, etc.).
+- Varios tipos de editores: visual, de notebook, de texto.
+- Soporte para la mayor parte de necesidades científicas y técnicas.
 
-``` {bash} 
-quarto create project --template github-pages --force
-```
+### Trabajo futuro
+- {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
+  - Uso de **Git** embebido para gestionar cambios en los documentos: 
+    - `commit`, `add`, `sync`, `push`, `pull` y gestión básica de ramas. 
+- Aplicar Quarto para sitios **web** usando **GitHub Pages**.
+- Edición online de la nueva web de [SiPBA](https://sipba.github.io){target="_blank"}
 
+# ¿Preguntas?
 
-# 🎓 Conclusión y Próximos Pasos
-
-## Quarto + VS Code: Una Combinación Potente
-
--   **Facilidad:** Escribir en Markdown, simple y enfocado.
--   **Poder:** Publicar en cualquier formato, con reproducibilidad.
--   **Integración:** VS Code hace que el flujo de trabajo sea fluido e intuitivo.
-
----
-
-## ¿Preguntas?
-
-¡Gracias por su atención!
+¡Gracias por vuestra atención!
