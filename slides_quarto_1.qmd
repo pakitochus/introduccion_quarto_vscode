@@ -247,7 +247,7 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 
 ------------------------------------------------------------------------
 
-## 4. Práctica 1: Mi Primer documento
+## Práctica 1: Mi Primer documento
 
 ::::: columns
 ::: {.column width="60%"}
@@ -276,7 +276,7 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 
 ------------------------------------------------------------------------
 
-## 5. Práctica 2: Imágenes y Formato Avanzado
+## Práctica 2: Imágenes y Formato Avanzado
 
 ### Referencias Cruzadas y Ecuaciones
 
@@ -303,7 +303,7 @@ $$ {#eq-fourier}
 
 ---
 
-## 6. Práctica 3: Artículo Científico <!-- (Front-matter y citas -->
+## Práctica 3: Artículo Científico <!-- (Front-matter y citas -->
 
 1.  **El Archivo de Referencias:** Necesitamos un archivo `references.bib` (o CSL-JSON) con las claves de las citas.
 2.  **Configuración en YAML:**
