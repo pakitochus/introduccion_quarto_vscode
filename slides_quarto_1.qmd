@@ -274,6 +274,10 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 :::
 :::::
 
+-------
+
+## Práctica 1.5: {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
+
 ------------------------------------------------------------------------
 
 ## Práctica 2: Imágenes y Formato Avanzado
