@@ -14,9 +14,11 @@ format:
     fontsize: 24pt
     embed-resources: true
     parallax-background-image: background.jpg
-    parallax-background-size: "1920px 1080px"
+    parallax-background-size: "1920px 1200px"
     parallax-background-horizontal: 50
     parallax-background-vertical: 20
+    mermaid:
+      theme: forest
   html:
     toc: true
     code-fold: true
@@ -277,6 +279,12 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 -------
 
 ## Práctica 1.5: {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
+
+- Staging area
+- `git add` (añadir)
+- `git push`, `git pull` y `git sync` (sincronizar)
+
+![](images/areas.svg)
 
 ------------------------------------------------------------------------
 
