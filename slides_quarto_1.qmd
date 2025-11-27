@@ -280,11 +280,28 @@ Contenido en [{{< iconify line-md:github >}} GitHub](https://github.com/pakitoch
 
 ## Práctica 1.5: {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
 
-- Staging area
-- `git add` (añadir)
-- `git push`, `git pull` y `git sync` (sincronizar)
+<!-- ![](images/areas.svg) -->
 
-![](images/areas.svg)
+![](images/Plugins%20_%20Mermaid%20Chart-2025-11-27-074703.svg){fig-align="center"}
+
+-------
+
+## Práctica 1.5: {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
+
+![Alt text](images/01_changes.png)
+![Alt text](images/02_staged.png)
+![Alt text](images/03_commit.png)
+![Alt text](images/04_commit_diff.png)
+
+-------
+
+## Práctica 1.5: {{< iconify material-icon-theme:git >}} Colaboración y control de versiones.
+
+![Alt text](images/05_commit_descr.png)
+![Alt text](images/06_sync.png)
+
+![Alt text](images/07_graph_before_sync.png)
+![Alt text](images/08_graph_after_sync.png)
 
 ------------------------------------------------------------------------
 
